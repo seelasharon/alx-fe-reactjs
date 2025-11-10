@@ -1,6 +1,7 @@
-import ProfilePage from './ProfilePage';
 import { createContext } from 'react';
 
-const UserContext = createContext(); // Create the context
+// Create the context
+const UserContext = createContext();
 
-export default UserContext; // Export it for use in other components
+// Export it for use in other components
+export default UserContext;
