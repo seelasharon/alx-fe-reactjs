@@ -1,27 +1,23 @@
-import React from 'react';
-
 function MainContent() {
-  return (
-    <main>
-      <p>I love to visit New York, Paris, and Tokyo.</p>
-    </main>
-  );
+    return (
+        <main style={{
+            padding: '2rem',
+            backgroundColor: '#f5f5f5',
+            borderRadius: '8px',
+            margin: '1rem 0',
+            minHeight: '200px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        }}>
+            <p style={{
+                fontSize: '1.2rem',
+                color: '#333',
+                fontFamily: 'Arial, sans-serif',
+                margin: 0
+            }}>I love to visit New York, Paris, and Tokyo.</p>
+        </main>
+    );
 }
 
-const UserProfile = (props) => {
-  return (
-    <main style={{
-      padding: '20px',
-      margin: '10px',
-      backgroundColor: '#e6f2ff',
-      fontFamily: 'Verdana, sans-serif',
-      lineHeight: '1.6'
-    }}>
-      <h2 style={{ color: '#003366' }}>Welcome to the City Guide</h2>
-      <p>Explore the best places, restaurants, and attractions in your favorite cities.</p>
-    </main>
-  );
-};
-
 export default MainContent;
-

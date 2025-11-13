@@ -1,13 +1,8 @@
-import React from "react";
-import UserInfo from "./UserInfo";
+import UserInfo from './UserInfo';
 
-const ProfilePage = () => {
-  return (
-    <div>
-      <h1>Profile Page</h1>
-      <UserInfo />
-    </div>
-  );
-};
+function ProfilePage() {
+  return <UserInfo />;
+}
 
 export default ProfilePage;
+
