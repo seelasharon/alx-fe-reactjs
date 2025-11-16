@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import useRecipeStore from "../store/recipeStore";
 import SearchBar from "./SearchBar";
+import FavoriteButton from "./FavoriteButton";
 import { Link } from "react-router-dom";
 
 const RecipeList = () => {
@@ -40,6 +41,9 @@ const RecipeList = () => {
               <h3 style={{ margin: 0 }}>{recipe.title}</h3>
             </Link>
             <p>{recipe.description}</p>
+
+            {/* Favorite button */}
+            <FavoriteButton recipeId={recipe.id} />
           </div>
         ))
       )}

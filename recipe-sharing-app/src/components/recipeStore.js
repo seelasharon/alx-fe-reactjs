@@ -1,18 +1,20 @@
 import { create } from "zustand";
 
 const useRecipeStore = create((set, get) => ({
-  // Data
-  recipes: [],
+  // --- Data ---
+  recipes: [],            // All recipes in the app
+  favorites: [],          // Array of recipe IDs marked as favorites
+  recommendations: [],    // Recipes recommended based on favorites
 
-  // Filters / search
-  searchTerm: "",
-  ingredientFilter: "",
-  timeFilter: "", // store as number or empty string
+  // --- Filters / Search ---
+  searchTerm: "",         // User search input for recipe titles
+  ingredientFilter: "",   // Filter recipes by ingredients
+  timeFilter: "",         // Filter recipes by max cook time (minutes)
 
-  // Results
-  filteredRecipes: [],
+  // --- Results ---
+  filteredRecipes: [],    // Recipes after applying search/filter logic
 
-  // CRUD actions
+  // --- CRUD actions ---
   addRecipe: (newRecipe) =>
     set((state) => ({ recipes: [...state.recipes, newRecipe] })),
 
@@ -24,12 +26,12 @@ const useRecipeStore = create((set, get) => ({
   deleteRecipe: (id) =>
     set((state) => ({ recipes: state.recipes.filter((r) => r.id !== id) })),
 
-  // Setters for filters / search
+  // --- Search & filtering ---
   setSearchTerm: (term) => set({ searchTerm: term }),
   setIngredientFilter: (term) => set({ ingredientFilter: term }),
   setTimeFilter: (value) => set({ timeFilter: value }),
 
-  // Filtering logic — updates filteredRecipes based on current state
+  // Apply filters and update filteredRecipes
   filterRecipes: () =>
     set((state) => {
       const term = (state.searchTerm || "").toLowerCase().trim();
@@ -37,12 +39,10 @@ const useRecipeStore = create((set, get) => ({
       const timeMax = state.timeFilter ? Number(state.timeFilter) : null;
 
       const filtered = state.recipes.filter((recipe) => {
-        // Title / searchTerm match
         const matchesTitle = term.length === 0
           ? true
           : (recipe.title || "").toLowerCase().includes(term);
 
-        // Ingredient match — recipe.ingredients may be a string or array
         let matchesIngredient = true;
         if (ingredientTerm.length > 0) {
           if (Array.isArray(recipe.ingredients)) {
@@ -50,24 +50,45 @@ const useRecipeStore = create((set, get) => ({
               (ing || "").toLowerCase().includes(ingredientTerm)
             );
           } else {
-            // treat ingredients as string
             matchesIngredient = (recipe.ingredients || "")
               .toLowerCase()
               .includes(ingredientTerm);
           }
         }
 
-        // Time match — assume recipe.cookTime (minutes) exists if present
         const matchesTime = timeMax == null
           ? true
           : (typeof recipe.cookTime === "number"
               ? recipe.cookTime <= timeMax
-              : true); // if recipe has no cookTime, include it
+              : true);
 
         return matchesTitle && matchesIngredient && matchesTime;
       });
 
       return { filteredRecipes: filtered };
+    }),
+
+  // --- Favorites actions ---
+  addFavorite: (recipeId) =>
+    set((state) => ({
+      favorites: state.favorites.includes(recipeId)
+        ? state.favorites
+        : [...state.favorites, recipeId], // Avoid duplicates
+    })),
+
+  removeFavorite: (recipeId) =>
+    set((state) => ({
+      favorites: state.favorites.filter((id) => id !== recipeId),
+    })),
+
+  // --- Recommendations ---
+  generateRecommendations: () =>
+    set((state) => {
+      // Simple mock: select some favorited recipes at random
+      const recommended = state.recipes.filter(
+        (recipe) => state.favorites.includes(recipe.id) && Math.random() > 0.5
+      );
+      return { recommendations: recommended };
     }),
 }));
 
