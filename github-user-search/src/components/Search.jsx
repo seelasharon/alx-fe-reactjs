@@ -272,52 +272,54 @@ function Search() {
 
         {/* Simple Search Result - Single User */}
         {userData && !loading && !error && searchMode === 'simple' && (
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="flex flex-col md:flex-row gap-6">
-              <div className="flex-shrink-0">
+          <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mx-2 sm:mx-0">
+            <div className="flex flex-col md:flex-row gap-4 sm:gap-6">
+              <div className="flex-shrink-0 flex justify-center md:justify-start">
                 <img
                   src={userData.avatar_url}
                   alt={`${userData.name || userData.login}'s avatar`}
-                  className="w-32 h-32 rounded-full border-4 border-gray-200"
+                  className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-gray-200"
                 />
               </div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-gray-900 mb-1">
+              <div className="flex-1 text-center md:text-left">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">
                   {userData.name || userData.login}
                 </h3>
                 {userData.name && (
-                  <p className="text-gray-600 mb-2">@{userData.login}</p>
+                  <p className="text-sm sm:text-base text-gray-600 mb-2">@{userData.login}</p>
                 )}
                 {userData.bio && (
-                  <p className="text-gray-700 mb-4">{userData.bio}</p>
+                  <p className="text-sm sm:text-base text-gray-700 mb-4">{userData.bio}</p>
                 )}
                 {userData.location && (
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-sm sm:text-base text-gray-600 mb-4">
                     <span className="font-medium">Location:</span> {userData.location}
                   </p>
                 )}
-                <div className="flex gap-6 mb-4 pb-4 border-b border-gray-200">
+                <div className="flex flex-wrap justify-center md:justify-start gap-4 sm:gap-6 mb-4 pb-4 border-b border-gray-200">
                   <div>
-                    <span className="text-sm text-gray-600 uppercase tracking-wide">Followers</span>
-                    <p className="text-xl font-semibold text-gray-900">{userData.followers}</p>
+                    <span className="text-xs sm:text-sm text-gray-600 uppercase tracking-wide block">Followers</span>
+                    <p className="text-lg sm:text-xl font-semibold text-gray-900">{userData.followers}</p>
                   </div>
                   <div>
-                    <span className="text-sm text-gray-600 uppercase tracking-wide">Following</span>
-                    <p className="text-xl font-semibold text-gray-900">{userData.following}</p>
+                    <span className="text-xs sm:text-sm text-gray-600 uppercase tracking-wide block">Following</span>
+                    <p className="text-lg sm:text-xl font-semibold text-gray-900">{userData.following}</p>
                   </div>
                   <div>
-                    <span className="text-sm text-gray-600 uppercase tracking-wide">Repositories</span>
-                    <p className="text-xl font-semibold text-gray-900">{userData.public_repos}</p>
+                    <span className="text-xs sm:text-sm text-gray-600 uppercase tracking-wide block">Repositories</span>
+                    <p className="text-lg sm:text-xl font-semibold text-gray-900">{userData.public_repos}</p>
                   </div>
                 </div>
-                <a
-                  href={userData.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
-                >
-                  View GitHub Profile →
-                </a>
+                <div className="flex justify-center md:justify-start">
+                  <a
+                    href={userData.html_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 sm:px-6 py-2 bg-blue-600 text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
+                  >
+                    View GitHub Profile →
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -325,9 +327,9 @@ function Search() {
 
         {/* Advanced Search Results - Multiple Users */}
         {usersList.length > 0 && !loading && !error && searchMode === 'advanced' && (
-          <div className="space-y-6">
-            <div className="bg-white rounded-lg shadow-md p-4">
-              <p className="text-gray-700">
+          <div className="space-y-4 sm:space-y-6 px-2 sm:px-0">
+            <div className="bg-white rounded-lg shadow-md p-3 sm:p-4">
+              <p className="text-sm sm:text-base text-gray-700">
                 Found <span className="font-semibold text-gray-900">{totalCount}</span> users
                 {usersList.length < totalCount && (
                   <span className="text-gray-500"> (showing {usersList.length})</span>
@@ -335,36 +337,36 @@ function Search() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {usersList.map((user) => (
-                <div key={user.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div key={user.id} className="bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow">
                   <div className="flex flex-col items-center text-center">
                     <img
                       src={user.avatar_url}
                       alt={`${user.name || user.login}'s avatar`}
-                      className="w-24 h-24 rounded-full border-2 border-gray-200 mb-4"
+                      className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-gray-200 mb-3 sm:mb-4"
                     />
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">
+                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
                       {user.name || user.login}
                     </h3>
                     {user.name && (
-                      <p className="text-sm text-gray-600 mb-2">@{user.login}</p>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2">@{user.login}</p>
                     )}
                     {user.bio && (
-                      <p className="text-sm text-gray-700 mb-3 line-clamp-2">{user.bio}</p>
+                      <p className="text-xs sm:text-sm text-gray-700 mb-2 sm:mb-3 line-clamp-2">{user.bio}</p>
                     )}
                     {user.location && (
-                      <p className="text-xs text-gray-600 mb-3">
+                      <p className="text-xs text-gray-600 mb-2 sm:mb-3">
                         📍 {user.location}
                       </p>
                     )}
-                    <div className="flex gap-4 mb-4 text-sm">
+                    <div className="flex gap-4 mb-3 sm:mb-4 text-xs sm:text-sm">
                       <div>
-                        <span className="text-gray-600">Repos</span>
+                        <span className="text-gray-600 block">Repos</span>
                         <p className="font-semibold text-gray-900">{user.public_repos}</p>
                       </div>
                       <div>
-                        <span className="text-gray-600">Followers</span>
+                        <span className="text-gray-600 block">Followers</span>
                         <p className="font-semibold text-gray-900">{user.followers}</p>
                       </div>
                     </div>
@@ -372,7 +374,7 @@ function Search() {
                       href={user.html_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+                      className="w-full px-3 sm:px-4 py-2 bg-blue-600 text-white text-xs sm:text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors"
                     >
                       View Profile
                     </a>
@@ -383,11 +385,11 @@ function Search() {
 
             {/* Load More Button */}
             {hasMore && (
-              <div className="text-center">
+              <div className="text-center pt-2">
                 <button
                   onClick={handleLoadMore}
                   disabled={loading}
-                  className="px-6 py-3 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors shadow-sm"
+                  className="px-4 sm:px-6 py-2 sm:py-3 bg-gray-600 text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors shadow-sm"
                 >
                   {loading ? 'Loading...' : 'Load More'}
                 </button>
@@ -398,8 +400,8 @@ function Search() {
 
         {/* Loading More State */}
         {loading && usersList.length > 0 && (
-          <div className="text-center py-4">
-            <p className="text-gray-600">Loading more users...</p>
+          <div className="text-center py-4 px-2">
+            <p className="text-sm sm:text-base text-gray-600">Loading more users...</p>
           </div>
         )}
       </div>
