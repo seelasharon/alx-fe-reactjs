@@ -19,7 +19,7 @@ function Layout() {
         <Outlet />
       </main>
       <footer className="footer">
-        <p>&copy; 2024 GitHub User Search. Built with React & Vite.</p>
+        <p>&copy; 2025 GitHub User Search. Designed by Sharon Seela.</p>
       </footer>
     </div>
   );
