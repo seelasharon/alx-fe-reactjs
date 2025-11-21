@@ -121,17 +121,17 @@ function Search() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
+    <div className="min-h-screen bg-gray-50 py-4 sm:py-8 px-2 sm:px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">GitHub User Search</h1>
-          <p className="text-gray-600">Search for GitHub users with advanced filtering options</p>
+        <div className="text-center mb-4 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 px-2">GitHub User Search</h1>
+          <p className="text-sm sm:text-base text-gray-600 px-2">Search for GitHub users with advanced filtering options</p>
         </div>
 
         {/* Search Mode Toggle */}
-        <div className="flex justify-center mb-6">
-          <div className="inline-flex rounded-lg border border-gray-300 bg-white p-1 shadow-sm">
+        <div className="flex justify-center mb-4 sm:mb-6 px-2">
+          <div className="inline-flex rounded-lg border border-gray-300 bg-white p-1 shadow-sm w-full sm:w-auto">
             <button
               onClick={() => {
                 setSearchMode('simple');
@@ -139,7 +139,7 @@ function Search() {
                 setUserData(null);
                 setUsersList([]);
               }}
-              className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`flex-1 sm:flex-none px-4 sm:px-6 py-2 rounded-md text-xs sm:text-sm font-medium transition-colors ${
                 searchMode === 'simple'
                   ? 'bg-blue-600 text-white shadow-sm'
                   : 'text-gray-700 hover:bg-gray-50'
@@ -154,7 +154,7 @@ function Search() {
                 setUserData(null);
                 setUsersList([]);
               }}
-              className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`flex-1 sm:flex-none px-4 sm:px-6 py-2 rounded-md text-xs sm:text-sm font-medium transition-colors ${
                 searchMode === 'advanced'
                   ? 'bg-blue-600 text-white shadow-sm'
                   : 'text-gray-700 hover:bg-gray-50'
@@ -167,21 +167,21 @@ function Search() {
 
         {/* Simple Search Form */}
         {searchMode === 'simple' && (
-          <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+          <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6 mx-2 sm:mx-0">
             <form onSubmit={handleSimpleSubmit} className="space-y-4">
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="Enter GitHub username..."
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="flex-1 px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm sm:text-base"
                   disabled={loading}
                 />
                 <button
                   type="submit"
                   disabled={loading || !username.trim()}
-                  className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors shadow-sm"
+                  className="w-full sm:w-auto px-6 py-2 sm:py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors shadow-sm text-sm sm:text-base"
                 >
                   {loading ? 'Searching...' : 'Search'}
                 </button>
@@ -192,8 +192,8 @@ function Search() {
 
         {/* Advanced Search Form */}
         {searchMode === 'advanced' && (
-          <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Advanced Search Criteria</h2>
+          <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6 mx-2 sm:mx-0">
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Advanced Search Criteria</h2>
             <form onSubmit={handleAdvancedSubmit} className="space-y-4">
               <div>
                 <label htmlFor="query" className="block text-sm font-medium text-gray-700 mb-2">
@@ -205,7 +205,7 @@ function Search() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="e.g., john, octocat..."
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm sm:text-base"
                   disabled={loading}
                 />
               </div>
@@ -221,7 +221,7 @@ function Search() {
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                     placeholder="e.g., San Francisco, New York..."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm sm:text-base"
                     disabled={loading}
                   />
                 </div>
@@ -237,7 +237,7 @@ function Search() {
                     onChange={(e) => setMinRepos(e.target.value)}
                     placeholder="e.g., 10, 50..."
                     min="0"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm sm:text-base"
                     disabled={loading}
                   />
                 </div>
@@ -246,7 +246,7 @@ function Search() {
               <button
                 type="submit"
                 disabled={loading || (!query.trim() && !location.trim() && !minRepos)}
-                className="w-full md:w-auto px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors shadow-sm"
+                className="w-full md:w-auto px-6 py-2 sm:py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors shadow-sm text-sm sm:text-base"
               >
                 {loading ? 'Searching...' : 'Search Users'}
               </button>
@@ -256,15 +256,15 @@ function Search() {
 
         {/* Loading State */}
         {loading && searchMode === 'advanced' && usersList.length === 0 && (
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
-            <p className="text-blue-800 font-medium">Loading...</p>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 sm:p-6 text-center mx-2 sm:mx-0">
+            <p className="text-blue-800 font-medium text-sm sm:text-base">Loading...</p>
           </div>
         )}
 
         {/* Error State */}
         {error && !loading && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center mb-6">
-            <p className="text-red-800 font-medium">
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4 sm:p-6 text-center mb-4 sm:mb-6 mx-2 sm:mx-0">
+            <p className="text-red-800 font-medium text-sm sm:text-base">
               {error === 'User not found' ? 'Looks like we cant find the user' : error}
             </p>
           </div>
