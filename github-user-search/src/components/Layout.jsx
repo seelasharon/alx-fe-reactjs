@@ -9,6 +9,10 @@ function Layout() {
           <Link to="/" className="logo">
             GitHub User Search
           </Link>
+          <div className="nav-links">
+            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/search" className="nav-link">Search</Link>
+          </div>
         </nav>
       </header>
       <main className="main-content">

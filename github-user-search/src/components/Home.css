@@ -19,7 +19,25 @@
 .home-content > p {
   font-size: 1.25rem;
   color: #586069;
+  margin-bottom: 2rem;
+}
+
+.search-link {
+  display: inline-block;
   margin-bottom: 3rem;
+  padding: 0.875rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #0366d6;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.search-link:hover {
+  background-color: #0256cc;
+  transform: translateY(-2px);
 }
 
 .features {

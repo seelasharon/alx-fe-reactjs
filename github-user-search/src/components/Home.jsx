@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 function Home() {
@@ -6,6 +7,9 @@ function Home() {
       <div className="home-content">
         <h1>Welcome to GitHub User Search</h1>
         <p>Search for GitHub users and explore their profiles and repositories.</p>
+        <Link to="/search" className="search-link">
+          Start Searching →
+        </Link>
         <div className="features">
           <div className="feature-card">
             <h3>🔍 Search Users</h3>
