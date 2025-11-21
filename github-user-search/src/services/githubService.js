@@ -36,6 +36,7 @@ export const fetchUserData = async (username) => {
 
 /**
  * Advanced search for GitHub users with multiple criteria
+ * Uses GitHub Search API: https://api.github.com/search/users?q={query}
  * @param {Object} searchParams - Search parameters
  * @param {string} searchParams.query - Username or name to search for
  * @param {string} searchParams.location - Location filter (optional)
@@ -48,7 +49,8 @@ export const searchUsersAdvanced = async (searchParams) => {
   try {
     const { query, location, minRepos, page = 1, perPage = 30 } = searchParams;
     
-    // Build the search query string
+    // Build the search query string for GitHub Search API
+    // GitHub Search API format: https://api.github.com/search/users?q={query}
     let searchQuery = query || '';
     
     // Add location filter if provided
@@ -66,15 +68,18 @@ export const searchUsersAdvanced = async (searchParams) => {
       searchQuery = 'type:user' + (location ? ` location:${location.trim()}` : '') + (minRepos ? ` repos:>=${minRepos}` : '');
     }
     
-    const response = await githubService.get('/search/users', {
-      params: {
-        q: searchQuery.trim(),
-        page,
-        per_page: Math.min(perPage, 100), // GitHub API max is 100
-        sort: 'repositories', // Sort by number of repositories
-        order: 'desc',
-      },
-    });
+    // Construct the full URL: https://api.github.com/search/users?q={query}
+    const endpoint = '/search/users';
+    const params = {
+      q: searchQuery.trim(),
+      page,
+      per_page: Math.min(perPage, 100), // GitHub API max is 100
+      sort: 'repositories', // Sort by number of repositories
+      order: 'desc',
+    };
+    
+    // Make request to: https://api.github.com/search/users?q={query}&page={page}&per_page={perPage}&sort=repositories&order=desc
+    const response = await githubService.get(endpoint, { params });
     
     return response.data;
   } catch (error) {
