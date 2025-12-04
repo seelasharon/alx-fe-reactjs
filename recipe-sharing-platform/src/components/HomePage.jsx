@@ -33,9 +33,15 @@ export default function HomePage() {
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
             🍳 Recipe Sharing Platform
           </h1>
-          <p className="text-xl text-gray-700">
+          <p className="text-xl text-gray-700 mb-8">
             Discover and share delicious recipes from around the world
           </p>
+          <Link
+            to="/add-recipe"
+            className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-all shadow-lg transform hover:scale-105"
+          >
+            ➕ Add New Recipe
+          </Link>
         </div>
 
         {/* Recipes Grid */}
