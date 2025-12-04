@@ -17,9 +17,11 @@ export default function AddRecipeForm() {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
-  // Handle input changes
+  // Handle input changes with explicit target.value
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const name = e.target.name;
+    const value = e.target.value;
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
