@@ -3,36 +3,173 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "/src/assets/images/Pasta-Carbonara.jpg"
+    "image": "/src/assets/images/Pasta-Carbonara.jpg",
+    "ingredients": [
+      "400g Spaghetti",
+      "200g Pancetta or Bacon, diced",
+      "4 Eggs",
+      "100g Parmesan Cheese, grated",
+      "Black Pepper to taste",
+      "Salt for pasta water"
+    ],
+    "instructions": [
+      "Bring a large pot of salted water to boil and cook spaghetti until al dente.",
+      "While pasta cooks, fry pancetta in a large skillet over medium heat until crispy.",
+      "In a bowl, beat eggs and mix with grated Parmesan cheese and black pepper.",
+      "Drain pasta, reserving 1 cup of pasta water.",
+      "Add hot pasta to the pancetta skillet off the heat.",
+      "Pour egg mixture over pasta and toss quickly, adding pasta water as needed to create a creamy sauce.",
+      "Serve immediately with extra Parmesan and black pepper."
+    ],
+    "prepTime": "10 mins",
+    "cookTime": "20 mins",
+    "servings": 4
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "/src/assets/images/chicken-tikka-masala.jpg"
+    "image": "/src/assets/images/chicken-tikka-masala.jpg",
+    "ingredients": [
+      "800g Chicken Breast, cubed",
+      "400ml Coconut Milk",
+      "200ml Tomato Sauce",
+      "3 tbsp Tikka Masala Paste",
+      "2 tbsp Butter",
+      "1 Onion, diced",
+      "3 Garlic Cloves, minced",
+      "Fresh Cilantro for garnish"
+    ],
+    "instructions": [
+      "Heat butter in a large pan and sauté onion and garlic until softened.",
+      "Add tikka masala paste and cook for 1-2 minutes until fragrant.",
+      "Add tomato sauce and coconut milk, stirring well.",
+      "Add chicken pieces and simmer for 20-25 minutes until cooked through.",
+      "Season with salt and pepper to taste.",
+      "Garnish with fresh cilantro.",
+      "Serve with rice or naan bread."
+    ],
+    "prepTime": "15 mins",
+    "cookTime": "30 mins",
+    "servings": 4
   },
   {
     "id": 3,
     "title": "Margherita Pizza",
     "summary": "Fresh mozzarella, basil, tomatoes, and olive oil on a thin crispy crust.",
-    "image": "/src/assets/images/margherita-pizza-recipe.jpg"
+    "image": "/src/assets/images/margherita-pizza-recipe.jpg",
+    "ingredients": [
+      "500g Pizza Dough",
+      "300ml Tomato Sauce",
+      "300g Fresh Mozzarella",
+      "Fresh Basil Leaves",
+      "3 tbsp Olive Oil",
+      "Salt and Black Pepper",
+      "Parmesan Cheese (optional)"
+    ],
+    "instructions": [
+      "Preheat oven to 220°C (425°F).",
+      "Roll out pizza dough on a floured surface to desired thickness.",
+      "Transfer to pizza stone or baking sheet.",
+      "Spread tomato sauce evenly, leaving a ½ inch border for crust.",
+      "Tear mozzarella and distribute over sauce.",
+      "Drizzle with olive oil and season with salt and pepper.",
+      "Bake for 12-15 minutes until crust is golden.",
+      "Top with fresh basil leaves immediately after removing from oven.",
+      "Slice and serve hot."
+    ],
+    "prepTime": "10 mins",
+    "cookTime": "15 mins",
+    "servings": 2
   },
   {
     "id": 4,
     "title": "Thai Green Curry",
     "summary": "A aromatic and spicy curry made with green chilies, coconut milk, and fresh herbs.",
-    "image": "/src/assets/images/Thai-Green-Curry.jpg"
+    "image": "/src/assets/images/Thai-Green-Curry.jpg",
+    "ingredients": [
+      "600g Chicken or Vegetables, cubed",
+      "400ml Coconut Milk",
+      "3 tbsp Green Curry Paste",
+      "200g Thai Eggplant",
+      "100g Green Beans",
+      "3 Kaffir Lime Leaves",
+      "Fresh Basil",
+      "Fish Sauce to taste"
+    ],
+    "instructions": [
+      "Heat 2-3 tbsp coconut milk in a pan over medium heat.",
+      "Add green curry paste and fry until aromatic, about 2-3 minutes.",
+      "Add remaining coconut milk and bring to simmer.",
+      "Add chicken or vegetables and cook for 8-10 minutes.",
+      "Add eggplant and green beans, cook for another 5-7 minutes.",
+      "Add kaffir lime leaves and season with fish sauce.",
+      "Taste and adjust seasoning as needed.",
+      "Top with fresh basil before serving.",
+      "Serve with jasmine rice."
+    ],
+    "prepTime": "15 mins",
+    "cookTime": "25 mins",
+    "servings": 4
   },
   {
     "id": 5,
     "title": "Beef Tacos",
     "summary": "Seasoned ground beef served in soft tortillas with fresh toppings and salsa.",
-    "image": "/src/assets/images/Ground-Beef-Tacos.jpg"
+    "image": "/src/assets/images/Ground-Beef-Tacos.jpg",
+    "ingredients": [
+      "500g Ground Beef",
+      "8 Soft Flour Tortillas",
+      "2 tbsp Taco Seasoning",
+      "1 Onion, diced",
+      "1 Tomato, diced",
+      "Shredded Lettuce",
+      "Shredded Cheese",
+      "Salsa and Sour Cream"
+    ],
+    "instructions": [
+      "Heat oil in a large skillet over medium-high heat.",
+      "Add diced onion and cook until softened, about 3 minutes.",
+      "Add ground beef and cook until browned, breaking it apart as it cooks.",
+      "Drain excess fat if needed.",
+      "Add taco seasoning and ¼ cup water, simmer for 5 minutes.",
+      "Warm tortillas in a dry skillet or over direct heat.",
+      "Fill each tortilla with seasoned beef.",
+      "Top with lettuce, tomato, cheese, salsa, and sour cream.",
+      "Serve immediately with lime wedges."
+    ],
+    "prepTime": "10 mins",
+    "cookTime": "15 mins",
+    "servings": 4
   },
   {
     "id": 6,
     "title": "Greek Salad",
     "summary": "Fresh vegetables with feta cheese, olives, and a simple olive oil vinaigrette.",
-    "image": "/src/assets/images/greek-salad.jpg"
+    "image": "/src/assets/images/greek-salad.jpg",
+    "ingredients": [
+      "4 Large Tomatoes, chopped",
+      "1 Cucumber, diced",
+      "1 Red Onion, sliced",
+      "200g Feta Cheese, cubed",
+      "1 cup Kalamata Olives",
+      "3 tbsp Olive Oil",
+      "1 tbsp Red Wine Vinegar",
+      "Oregano to taste"
+    ],
+    "instructions": [
+      "Chop tomatoes and place in a large bowl.",
+      "Add diced cucumber, red onion slices, and olives.",
+      "Top with crumbled or cubed feta cheese.",
+      "In a small bowl, whisk together olive oil and red wine vinegar.",
+      "Pour dressing over salad and toss gently.",
+      "Sprinkle with oregano to taste.",
+      "Season with salt and black pepper.",
+      "Serve chilled or at room temperature.",
+      "Best served fresh."
+    ],
+    "prepTime": "15 mins",
+    "cookTime": "0 mins",
+    "servings": 4
   }
 ]

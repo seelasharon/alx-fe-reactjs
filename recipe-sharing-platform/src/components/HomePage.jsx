@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import recipesData from '../data.json';
 
 export default function HomePage() {
@@ -44,8 +45,9 @@ export default function HomePage() {
               key={recipe.id}
               className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 transform overflow-hidden cursor-pointer border border-gray-100"
             >
-              {/* Recipe Image Container */}
-              <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300">
+              <Link to={`/recipe/${recipe.id}`} className="block h-full">
+                {/* Recipe Image Container */}
+                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300">
                 <img
                   src={recipe.image}
                   alt={recipe.title}
@@ -65,11 +67,6 @@ export default function HomePage() {
                 <p className="text-gray-600 text-base mb-6 leading-relaxed line-clamp-3">
                   {recipe.summary}
                 </p>
-
-                {/* View Recipe Button */}
-                <button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-3 px-4 rounded-lg transition-all duration-200 transform hover:translate-y-1 shadow-md">
-                  View Full Recipe →
-                </button>
               </div>
 
               {/* Card Footer */}
@@ -77,6 +74,15 @@ export default function HomePage() {
                 <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Recipe Card</span>
                 <span className="text-indigo-600 text-lg">★★★★★</span>
               </div>
+              </Link>
+
+              {/* View Recipe Button */}
+              <Link
+                to={`/recipe/${recipe.id}`}
+                className="block w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-3 px-4 rounded-b-lg transition-all duration-200 text-center"
+              >
+                View Full Recipe →
+              </Link>
             </div>
           ))}
         </div>
