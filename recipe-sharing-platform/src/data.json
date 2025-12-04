@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "/src/assets/images/Pasta-Carbonara.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "/src/assets/images/chicken-tikka-masala.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Margherita Pizza",
+    "summary": "Fresh mozzarella, basil, tomatoes, and olive oil on a thin crispy crust.",
+    "image": "/src/assets/images/margherita-pizza-recipe.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Thai Green Curry",
+    "summary": "A aromatic and spicy curry made with green chilies, coconut milk, and fresh herbs.",
+    "image": "/src/assets/images/Thai-Green-Curry.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Beef Tacos",
+    "summary": "Seasoned ground beef served in soft tortillas with fresh toppings and salsa.",
+    "image": "/src/assets/images/Ground-Beef-Tacos.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Greek Salad",
+    "summary": "Fresh vegetables with feta cheese, olives, and a simple olive oil vinaigrette.",
+    "image": "/src/assets/images/greek-salad.jpg"
+  }
+]
