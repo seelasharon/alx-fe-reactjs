@@ -24,3 +24,4 @@ function AddTodoForm({ onAdd }) {
 }
 
 export default AddTodoForm;
+export { AddTodoForm };

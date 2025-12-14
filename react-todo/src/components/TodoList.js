@@ -62,3 +62,4 @@ function TodoList() {
 }
 
 export default TodoList;
+export { TodoList };
