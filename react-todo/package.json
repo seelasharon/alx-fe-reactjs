@@ -1,0 +1,13 @@
+{
+  "name": "react-todo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "jest": "^30.2.0"
+  }
+}
