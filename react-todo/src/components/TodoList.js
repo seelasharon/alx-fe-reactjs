@@ -54,7 +54,6 @@ function TodoList() {
             key={todo.id}
             onClick={() => toggleTodo(todo.id)}
             style={{
-              textDecoration: todo.completed ? 'line-through' : 'none',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
@@ -62,7 +61,7 @@ function TodoList() {
               marginBottom: '0.5rem',
             }}
           >
-            <span>{todo.text}</span>
+            <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>{todo.text}</span>
             <button onClick={(e) => { e.stopPropagation(); deleteTodo(todo.id); }}>
               Delete
             </button>
