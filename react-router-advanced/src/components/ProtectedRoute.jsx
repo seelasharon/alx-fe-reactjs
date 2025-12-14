@@ -1,11 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
-
-// Simulate authentication status
-const isAuthenticated = () => {
-  // Change this to false to simulate a logged-out user
-  return localStorage.getItem("isLoggedIn") === "true";
-};
+import { useAuth } from "./useAuth";
 
 export default function ProtectedRoute() {
-  return isAuthenticated() ? <Outlet /> : <Navigate to="/login" replace />;
+  const { isAuthenticated } = useAuth();
+  return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
 }
