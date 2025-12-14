@@ -1,16 +1,75 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Implementing Form Handling in React with Controlled Components and Formik
 
-Currently, two official plugins are available:
+## Objective
+Learn to manage form data in React using controlled components and then transition to using Formik for more complex form handling, focusing on a practical application involving a user registration form.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Project Overview
+This project demonstrates two approaches to form handling in React:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Controlled Components**: Manual state management using React's `useState`.
+2. **Formik Integration**: Leveraging Formik and Yup for advanced form state management and validation.
 
-## Expanding the ESLint configuration
+Both approaches implement a user registration form with fields for username, email, and password, including basic validation.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Step 1: Set Up the React Project
+
+### Project Setup
+
+```bash
+npm create vite@latest form-handling-react -- --template react
+cd form-handling-react
+npm install
+```
+
+---
+
+## Step 2: User Registration Form Using Controlled Components
+
+- **Component:** `RegistrationForm` (`src/components/RegistrationForm.jsx`)
+- **Features:**
+	- Fields: username, email, password
+	- State managed with `useState`
+	- Basic validation: all fields required
+
+---
+
+## Step 3: Transition to Formik for Form Handling
+
+### Integrate Formik
+
+```bash
+npm install formik yup
+```
+
+- **Component:** `FormikForm` (`src/components/formikForm.js`)
+- **Features:**
+	- Uses Formik's `Form`, `Field`, and `ErrorMessage`
+	- Validation handled by Yup
+	- Same fields and validation as the controlled form
+
+---
+
+## How to Run
+
+```bash
+npm run dev
+```
+
+Open your browser to the provided local address to view the registration forms.
+
+---
+
+## Learning Outcomes
+- Understand the difference between controlled components and Formik-managed forms
+- Learn to implement validation manually and with Yup
+- Gain experience in refactoring React forms for scalability
+
+---
+
+## Mock API
+This project can be extended to submit registration data to a mock API endpoint for further practice.
