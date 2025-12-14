@@ -36,6 +36,7 @@ function App() {
           </Route>
         </Route>
         <Route path="/blog/:postId" element={<BlogPost />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
       </Routes>
     </BrowserRouter>
   );
