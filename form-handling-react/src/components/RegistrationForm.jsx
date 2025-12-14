@@ -1,26 +1,27 @@
 import React, { useState } from "react";
 import "./RegistrationForm.css";
 
+
 function RegistrationForm() {
-  const [form, setForm] = useState({
-    username: "",
-    email: "",
-    password: ""
-  });
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+    if (name === "username") setUsername(value);
+    if (name === "email") setEmail(value);
+    if (name === "password") setPassword(value);
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   const validate = () => {
     const newErrors = {};
-    if (!form.username.trim()) newErrors.username = "Username is required";
-    if (!form.email.trim()) newErrors.email = "Email is required";
-    if (!form.password.trim()) newErrors.password = "Password is required";
+    if (!username.trim()) newErrors.username = "Username is required";
+    if (!email.trim()) newErrors.email = "Email is required";
+    if (!password.trim()) newErrors.password = "Password is required";
     return newErrors;
   };
 
@@ -46,7 +47,7 @@ function RegistrationForm() {
           type="text"
           id="username"
           name="username"
-          value={form.username}
+          value={username}
           onChange={handleChange}
         />
         {errors.username && <span className="error">{errors.username}</span>}
@@ -57,7 +58,7 @@ function RegistrationForm() {
           type="email"
           id="email"
           name="email"
-          value={form.email}
+          value={email}
           onChange={handleChange}
         />
         {errors.email && <span className="error">{errors.email}</span>}
@@ -68,7 +69,7 @@ function RegistrationForm() {
           type="password"
           id="password"
           name="password"
-          value={form.password}
+          value={password}
           onChange={handleChange}
         />
         {errors.password && <span className="error">{errors.password}</span>}
